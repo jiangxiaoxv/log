@@ -15,10 +15,14 @@ export default defineConfig({
     // 反向代理 跨域配置
     proxy: {
       '/api': {
-        // target: 'http://127.0.0.1:8080',
+        // target: 'http://10.10.10.23:8080',
+        target: 'http://10.10.10.23:32001',
         changeOrigin: true,
         ws: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
+        rewrite: (path) => {
+          console.log('>>>>>>>>path', path)
+          return path.replace(/^\/api/, 's')
+        }
       }
     }
   }

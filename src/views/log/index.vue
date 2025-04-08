@@ -24,10 +24,11 @@ const tableData = ref([])
 async function getData() {
   try {
     const data = await getLogData()
-    // console.log('>>>>>>data', data)
-    tableData.value = [...data.data]
+    console.log('>>>>>>data', data)
+    // tableData.value = [...data.data]
   } catch (err) {
-    tableData.value = err
+    // tableData.value = err
+    console.log('>>>>>>.err', err)
   }
 }
 

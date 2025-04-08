@@ -11,7 +11,6 @@ const envResolver = {
     return Object.assign({}, viteBaseConfig(command, mode), vitePrdConfig)
   },
   serve: (command, mode) => {
-    // console.log('开发');
     return Object.assign({}, viteBaseConfig(command, mode), viteDevConfig) // 新配置里可能会配置envDir
   }
 }

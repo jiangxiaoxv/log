@@ -4,7 +4,7 @@ const baseURL = import.meta.env.VITE_BASE_URL
 
 const instance = axios.create({
   baseURL, //请求URL前缀
-  timeout: 1000
+  timeout: 50000
 })
 
 // 添加请求拦截器
@@ -29,15 +29,8 @@ instance.interceptors.response.use(
   },
   function (error) {
     const data = error.response
-    const memo = [
-      {
-        id: '1',
-        reason: 'Tom',
-        strategy: '甲醛味太重',
-        date: '2024-04-03'
-      }
-    ]
-    return Promise.reject(memo)
+
+    return Promise.reject(error)
   }
 )
 export default instance
