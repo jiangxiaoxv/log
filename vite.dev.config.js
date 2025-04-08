@@ -16,12 +16,11 @@ export default defineConfig({
     proxy: {
       '/api': {
         // target: 'http://10.10.10.23:8080',
-        target: 'http://10.10.10.23:32001',
+        target: 'http://10.10.10.23:32003',
         changeOrigin: true,
         ws: true,
         rewrite: (path) => {
-          console.log('>>>>>>>>path', path)
-          return path.replace(/^\/api/, 's')
+          return path.replace(/^\/api/, '')
         }
       }
     }
