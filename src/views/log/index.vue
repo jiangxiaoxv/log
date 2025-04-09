@@ -4,7 +4,7 @@
 
     <div class="log-table">
       <el-table :data="tableData" style="width: 100%; height: calc(100vh - 70px)">
-        <el-table-column prop="id" label="异常执行体ID" />
+        <el-table-column prop="id" label="异常执行体名称" />
         <el-table-column prop="reason" label="异常原因" />
         <el-table-column prop="strategy" label="裁决策略" />
         <el-table-column prop="date" label="裁决时间" />
@@ -34,7 +34,8 @@ async function getData() {
             date: data[i]['event_header'][1],
             strategy: data[i]['event_entity']['event_action'],
             reason: data[i]['event_entity']['dmf_info.dmf_content'],
-            id: data[i]['event_entity']['dmf_info.dmf_executor_ip']
+            id: data[i]['event_entity']['dmf_info.dmf_executor_name']
+            // id: data[i]['event_entity']['dmf_info.dmf_executor_ip']
           }
           logList.push(item)
         }
